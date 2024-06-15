@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page | Mega-Tel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: #1d2126;
+        }
+        .link1 {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            font-size:120%;
+        }
+        .link1:hover {
+            color: orange; 
+        }
+        .link1::after {
+            content: ''; 
+            position: absolute;
+            left: 0; 
+            bottom: -2px;
+            width: 100%;
+            height: 2px; 
+            background-color: orange;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .link1:hover::after {
+            transform: scaleX(1);
+        }
+        .navbar-brand img {
+            width: 90px;
+            height: 60px;
+            margin-right: -20px;
+            margin-left:-30px;
+        }
+        .navbar-brand:hover img{
+            filter: brightness(150%);
+        }
+        .navbar-brand .text-light{
+            font-weight: bold;
+        }
+        .navbar-brand{
+            padding-left:5%;
+        }
+        #navbarNav{
+            justify-content:flex-end;
+            flex-grow:1;
+            padding-right:7%;
+        }
+        .navbar-item{
+            padding-right: 8%;
+        }
+        .nav-item1{
+            margin-right:3%;
+        }
+        .social-link {
+            margin-left:15px;
+            position: relative;
+        }
+        .social-link i {
+            color: black;
+            font-size: 15px; 
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+        .social-link::before {
+            content: '';
+            width: 23px;
+            height: 23px;
+            background-color: orange; 
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            right: -15px; 
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+        .social-link a {
+            color: black; 
+            text-decoration: none;
+            position: relative;
+            z-index: 2; 
+        }
+        .social-link:hover i {
+            color: white; 
+        }
+        .social-link:hover::before {
+            background-color: #FF7F0E;
+        }
+        .btn {
+            color: #de800e;
+            background-color: #1d2126;
+            border-color: #de800e;
+        }
+        .btn:hover {
+            background-color: #de800e;
+            border-color: #de800e;
+            color: #ffffff;
+        }
+        @media (max-width: 726px) {
+            /* Adjust image size for phones */
+            .navbar{
+                height:150px;
+                border-bottom: 4px solid #de800e
+            }
+            .navbar-toggler {
+                display: block;
+            }
+            .navbar-collapse {
+                display: none; 
+                justify-content: flex-end; 
+            }
+            .navbar-brand{
+                padding-bottom:9px;
+            }
+            .navbar-nav {
+                flex-direction: row; 
+            }
+            .nav-item1 {
+                display: block; 
+                margin-right: 10px;
+            }
+            .social-link i {
+                left: 120%;
+                top: 140%;
+            }
+            .navbar-item {
+                padding-right: 0;
+            }
+            .navbar-item a {
+                margin-left: 10px;
+            }
+            .img1 {
+                display: none;
+            }
+            #par1{
+                font-size:15px;
+                padding-left: 5%;
+                font-weight: bold;
+            }
+            #par2{
+                font-size:40px;
+                padding-left: 5%;
+            }
+            #par3{
+                font-size:12px;
+                padding-left: 5%;
+            }
+            .big-cont{
+                align-items: center;
+            }
+        }
+        
+        @media (min-width: 726px) {
+            /* Adjust image size for Computers */
+
+            .navbar{
+                position: fixed;
+                width: 100%;
+                height:100px;
+                border-bottom: 4px solid #de800e;
+                z-index:1000;
+            }
+            .navconv{
+                height:100px;
+            }
+            .navbar-toggler {
+                display: none;
+            }
+            .social-link i {
+                left: 120%;
+                top: 140%;
+            }
+            #par1{
+                font-size:30px;
+                padding-left:15%;
+                font-weight: bold;
+            }
+            #par2{
+                font-size:60px;
+                padding-left: 15%;
+            }
+            #par3{
+                padding-left: 15%;
+            }
+            .big-cont{
+                display: flex;
+                align-items: center;
+            }
+            
+        }
+        .toggler-output {
+            background-color: #343a40; 
+            padding: 10px;
+            display: none; 
+        }
+
+        .toggler-item {
+            margin-bottom: 5px; 
+        }
+
+        .toggler-link {
+            color: #f0f0f0; 
+            text-decoration: none;
+            transition: color 0.3s; 
+        }
+
+        .toggler-link:hover {
+            color: #FF7F0E;
+        }
+        .body2{
+            background-image:url("ttt.jpg");
+            width:100%;
+            display: flex;
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: space-between;
+            z-index:-1;
+        }
+        #par1{
+            padding-top: 10%;
+            color: #f18c10;
+            z-index:1;
+        }
+        #par2{
+            color: #ffffff;
+            font-weight: bold;
+            z-index: 1;
+
+        }
+        #par3{
+            padding-bottom:5%;
+            color: #a7c0d9;
+            z-index: 1;
+        }
+        .img1{
+            width:153%;
+            height:auto;
+            margin-left:-55%;
+        }
+        .content2{
+            margin: 40px 20px 20px 20px;
+            padding:20px;
+            background:linear-gradient(45deg, #FFA500, #FF6347);
+            ;
+            width:80%;
+            height:250px;
+            text-align: center;
+            border-radius: 10px;
+            border: 4px solid #e76d17;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .content2:hover{
+            background-color:#3a2f22;
+            transform: scale(1.1);
+            filter: brightness(120%);
+        }
+        .content2:hover ~ .content2 {
+            transform: scale(0.9); 
+        }
+        .content2:hover .box-tit{
+            color: #dedede;
+        }
+        .content2:hover .box-cont{
+            color: #dedede;
+        }
+        
+        .box-tit{
+            color: #dedede;
+            font-size:25px;
+            font-weight: bold;
+            font-family:cursive;
+        }
+        .box-cont{
+            font-size:40px;
+            color: #dedede;
+            justify-content: center;
+            font-weight: bold;
+            font-family:cursive;
+        }
+        .content2_img {
+            display: flex;
+            margin:3%;
+            justify-content: center;
+            align-items: center;
+            max-width:40%;
+            position: relative;
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+        
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .controls a {
+            cursor: pointer;
+            padding: 8px 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: rgb(210, 155, 83);
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .controls a:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .mySlides{
+            border-radius: 10px;
+        }
+        .big-cont2{
+            display: flex;
+        }
+        .content3{
+            margin: 3%;
+            
+        }
+        #p1{
+            font-weight: bold;
+            font-size: 30px;
+            color:#FF7F0E;
+        }
+        #p2{
+            font-weight: bold;
+            font-size:50px;
+            color: #f0f0f0;
+        }
+        #p3{
+            font-size: 23px;
+            color: #717477;
+        }
+        .big-cont3{
+            display: flex;
+        }
+        
+        .big-cont4{
+            display: flex;
+        }
+        .content4 {
+            margin: 60px;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            position: relative;
+            border:2px solid #f18c10;
+            background-color: #171a1e;
+        }
+        
+        .icon {
+            color: #FF7F0E;
+            margin-bottom: 20px;
+        }
+    /* Define the spinning animation */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Apply the animation to the gear icon */
+    .fa-cog:hover {
+        animation: spin 0.8s linear infinite;
+    }
+    /* Apply the lighting effect to the lamp icon */
+    .fa-lightbulb:hover {
+        color: yellow;
+        filter:brightness(200%);
+    }
+    .fa-envelope-open {
+         display: none;
+    }
+    
+    .open-envelope:hover + .fa-envelope-open {
+         display: inline;
+    }
+    
+    .fa-envelope:hover {
+                display: none;
+            }
+        .ic1{
+            color: #f18c10;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .ic2{
+            color: #838a91;
+            font-size:15px;
+        }
+        .big-cont4{
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow:hidden;
+        }
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the entire background */
+        }
+        .content5{
+            background-color: rgba(255, 132, 0, 0.6);
+            max-width:50%;
+            text-align: center;
+            position: relative;
+            padding:5%;
+
+        }
+        .content6{
+            background-color: rgba(255, 136, 0, 0.6);
+            max-width:50%;
+            text-align: center;
+            position: relative;
+            padding:5%;
+            padding-right: 16%;
+        }
+        #cont5-1{
+            color:#ffffff;
+            font-size:30px;
+            font-family: cursive;
+        }
+        #cont5-2{
+            color: #1d2126;
+            font-size:40px;
+            font-family: cursive;
+            font-weight: bold;
+        }
+        #cont5-3{
+            color:#4e4b47;
+            font-size:25px;
+            font-family: cursive;
+        }
+        #cont6-1{
+            color:#f0f0f0;
+            font-size:30px;
+            font-family: cursive;
+        }
+        .cont6-2{
+            color:#1d2126;
+            font-size:30px;
+            font-family: cursive;
+            font-weight: bold;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+          }
+          a {
+            color: #fff;
+            text-decoration: none;
+          }
+          .pg-footer {
+            font-family: 'Roboto', sans-serif;
+          }
+          
+          
+          .footer {
+              background-color: #343a40;
+              color: #fff;
+          }
+          .footer-wave-svg {
+              background-color: transparent;
+              display: block;
+              height: 30px;
+              position: relative;
+              top: -1px;
+              width: 100%;
+          }
+          .footer-wave-path {
+              fill: #fffff2;
+          }
+          
+          .footer-content {
+              margin-left: auto;
+              margin-right: auto;
+              max-width: 1230px;
+              padding: 40px 15px 450px;
+              position: relative;
+          }
+          
+          .footer-content-column {
+              box-sizing: border-box;
+              float: left;
+              padding-left: 15px;
+              padding-right: 15px;
+              width: 100%;
+              color: #fff;
+          }
+          
+          .footer-content-column ul li a {
+            color: #fff;
+            text-decoration: none;
+          }
+          
+          .footer-logo-link {
+              display: inline-block;
+          }
+          .footer-menu {
+              margin-top: 30px;
+          }
+          
+          .footer-menu-name {
+              color: #fffff2;
+              font-size: 15px;
+              font-weight: 900;
+              letter-spacing: .1em;
+              line-height: 18px;
+              margin-bottom: 0;
+              margin-top: 0;
+              text-transform: uppercase;
+          }
+          .footer-menu-list {
+              list-style: none;
+              margin-bottom: 0;
+              margin-top: 10px;
+              padding-left: 0;
+          }
+          .footer-menu-list li {
+              margin-top: 5px;
+          }
+          
+          .footer-call-to-action-description {
+              color: #fffff2;
+              margin-top: 10px;
+              margin-bottom: 20px;
+          }
+          .footer-call-to-action-button:hover {
+              background-color: #fffff2;
+              color: #f77b00e4;
+          }
+          .button:last-of-type {
+              margin-right: 0;
+          }
+          .footer-call-to-action-button {
+              background-color: #f77b00e4;
+              border-radius: 21px;
+              color: #fffff2;
+              display: inline-block;
+              font-size: 11px;
+              font-weight: 900;
+              letter-spacing: .1em;
+              line-height: 18px;
+              padding: 12px 30px;
+              margin: 0 10px 10px 0;
+              text-decoration: none;
+              text-transform: uppercase;
+              transition: background-color .2s;
+              cursor: pointer;
+              position: relative;
+          }
+          .footer-call-to-action {
+              margin-top: 30px;
+          }
+          .footer-call-to-action-title {
+              color: #fffff2;
+              font-size: 14px;
+              font-weight: 900;
+              letter-spacing: .1em;
+              line-height: 18px;
+              margin-bottom: 0;
+              margin-top: 0;
+              text-transform: uppercase;
+          }
+          .footer-call-to-action-link-wrapper {
+              margin-bottom: 0;
+              margin-top: 10px;
+              color: #fff;
+              text-decoration: none;
+          }
+          .footer-call-to-action-link-wrapper a {
+              color: #fff;
+              text-decoration: none;
+          }
+          
+          
+          
+          
+          
+          .footer-social-links {
+              bottom: 0;
+              height: 54px;
+              position: absolute;
+              right: 0;
+              width: 236px;
+          }
+          
+          .footer-social-amoeba-svg {
+              height: 54px;
+              left: 0;
+              display: block;
+              position: absolute;
+              top: 0;
+              width: 236px;
+          }
+          
+          .footer-social-amoeba-path {
+              fill: #f77b00e4;
+          }
+          
+          .footer-social-link.linkedin {
+              height: 26px;
+              left: 3px;
+              top: 11px;
+              width: 26px;
+          }
+          
+          .footer-social-link {
+              display: block;
+              padding: 10px;
+              position: absolute;
+          }
+          
+          .hidden-link-text {
+              position: absolute;
+              clip: rect(1px 1px 1px 1px);
+              clip: rect(1px,1px,1px,1px);
+              -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+              clip-path: inset(0px 0px 99.9% 99.9%);
+              overflow: hidden;
+              height: 1px;
+              width: 1px;
+              padding: 0;
+              border: 0;
+              top: 50%;
+          }
+          
+          .footer-social-link.facebook:hover .fab.fa-facebook {
+            color: rgb(62, 36, 4);
+          }
+          .footer-social-link.instagram:hover .fab.fa-instagram {
+            color: rgb(62, 36, 4);
+          }
+          .footer-social-link.twitter:hover .fab.fa-twitter {
+            color: rgb(62, 36, 4);
+          }
+          .footer-social-link.linkedin:hover .fab.fa-linkedin {
+            color: rgb(62, 36, 4);
+          }
+                              
+          
+          .footer-social-link.twitter {
+              height: 28px;
+              left: 62px;
+              top: 3px;
+              width: 28px;
+          }
+          
+          .footer-social-link.instagram {
+              height: 24px;
+              left: 123px;
+              top: 12px;
+              width: 24px;
+          }
+          
+          .footer-social-link.facebook {
+              height: 34px;
+              left: 172px;
+              top: 7px;
+              width: 34px;
+          }
+          
+          .footer-copyright {
+              background-color: #f77b00e4;
+              color: #fff;
+              padding: 15px 30px;
+            text-align: center;
+          }
+          
+          .footer-copyright-wrapper {
+              margin-left: auto;
+              margin-right: auto;
+              max-width: 1200px;
+          }
+          
+          .footer-copyright-text {
+            color: #fff;
+              font-size: 13px;
+              font-weight: 400;
+              line-height: 18px;
+              margin-bottom: 0;
+              margin-top: 0;
+          }
+          
+          .footer-copyright-link {
+              color: #fff;
+              text-decoration: none;
+          }
+          .footer-copyright-link:hover{
+            color:rgb(62, 36, 4);
+          }
+          @media (min-width:320px) and (max-width:479px)  {
+            .footer-content {
+              margin-left: auto;
+              margin-right: auto;
+              max-width: 1230px;
+              padding: 40px 15px 1050px;
+              position: relative;
+            }
+          }
+          @media (min-width: 760px) {
+            .footer-content {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1230px;
+                padding: 40px 15px 450px;
+                position: relative;
+            }
+          
+            .footer-wave-svg {
+                height: 50px;
+            }
+          
+            .footer-content-column {
+                width: 24.99%;
+            }
+          }
+    </style>  
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="WhatsApp_Image_2024-02-23_at_03.10.17__2_-removebg-preview.png" alt="Logo">
+                <span class="text-light" style="">Mega Tel</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item1">
+                        <a href="C:\Users\HP OMEN\Desktop\Courses\Coursera\Web Dev\My Pages\Page3\index.html" class="nav-link active link1">Home</a>
+                    </li>
+                    <li class="nav-item1">
+                        <a href="/reservation" class="nav-link link1">About_Us</a>
+                    </li>
+                    <li class="nav-item1">
+                        <a href="/galerie" class="nav-link link1">Contact</a>
+                    </li>
+                    <li class="nav-item1">
+                        <a href="/galerie" class="nav-link link1">Data_Protection</a>
+                    </li>
+                    <li class="social-link">
+                        <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="social-link">
+                        <a href="#" class="nav-link"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li class="social-link">
+                        <a href="#" class="nav-link"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li class="social-link">
+                        <a href="#" class="nav-link"><i class="fab fa-linkedin"></i> </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-item">
+                <a href="C:\Users\HP OMEN\Desktop\Courses\Coursera\Web Dev\My Pages\Page3\page_Login.html" class="btn"><strong>Log In</strong></a>
+                <a href="C:\Users\HP OMEN\Desktop\Courses\Coursera\Web Dev\My Pages\Page3\Page_Sign.html" class="btn"><strong>Sign Up</strong></a>
+            </div>
+        </div>
+    </nav>
+    <div class="navconv"></div>
+    <div class="body2">
+        <div class="content1">
+        <p id="par1">In der Welt der digitalen <br>Kundenservice-Lösungen</p>
+        <p id="par2">IHR GLOBALER<br>STRATEGISCHER PARTNER</p>
+        <p id="par3">Willkommen bei MegaTel Ihrem erstklassigen Partner für professionelle<br> Callcenter-Dienstleistungen!Wir präsentieren Ihnen heute unsere<br> erstklassigen Callcenter-Dienstleistungen, die speziell auf die<br>Bedürfnisse von Großunternehmen zugeschnitten sind.</p>
+        </div>
+        <div>
+        <img class="img1"src="portrait-happy-smiling-cheerful-support-phone-operator-headset-isolated-white-wall-removebg-preview.png"/>
+        </div>
+    </div>
+    <div class="big-cont">
+        <div class="content2" id="con1">
+            <p class="box-tit">Projekt erfolgreich<br>abgeschlossen</p>
+            <p class="box-cont">19+</p>
+        </div>
+        <div class="content2" id="con2">
+            <p class="box-tit">Jahrelange Erfahrung<br>mit stolz</p>
+            <p class="box-cont">7+</p>
+        </div>
+        <div class="content2" id="con3">
+            <p class="box-tit">Partnerschaft weltwei</p><br><br>
+            <p class="box-cont">10+</p>
+        </div>
+        <div class="content2" id="con4">
+            <p class="box-tit">Mitarbeiter weltweit</p><br><br>
+            <p class="box-cont">150+</p>
+        </div>
+    </div>
+    <div class="big-cont2">
+        <div class="content2_img">
+            <img class="mySlides" src="people-working-call-center.jpg">
+            <img class="mySlides" src="groupe-femmes-affaires-assis-au-bureau-documents-aide-ordinateur-portable-ordinateur-expression-serieuse-confiante-travaillant-ensemble-au-bureau (1).jpg ">
+            <img class="mySlides" src="confident-call-center-operator-talking-with-client.jpg">
+            <div class="controls">
+                <a class="prev" onclick="plusDivs(-1)">&#10094;</a>
+                <a class="next" onclick="plusDivs(1)">&#10095;</a>
+            </div>
+        </div>
+        <div class="content3">
+            <p id="p1">Erfahrung und stabilitat</p>
+            <p id="p2">7 Jahre ungeschlagener Erfolg </p>
+            <p id="p3">MegaTel ist ein führendes Callcenter-Unternehmen, das sich auf<br>
+                 herausragende Kommunikationslösungen spezialisiert hat. Mit<br>
+                 langjähriger Erfahrung bieten wir Ihnen qualitativ hochwertige<br>
+                 Dienstleistungen, die auf Ihre individuellen Bedürfnisse zugeschnitten<br>
+                 sind.
+            </p>
+        </div>
+    </div>
+    <div class="big-cont3">
+        <div class="content4">
+            <i class="fas fa-lightbulb fa-5x icon"></i>
+            <p class="ic1">Flexibilität</p>
+            <p class="ic2">Flexible Dienstleistungen nach Bedarf Skalierbare Lösungen für Unternehmenswachstum</p>
+        </div>
+        <div class="content4">
+            <i class="fas fa-cog fa-5x icon"></i>
+            <p class="ic1">Technologie</p>
+            <p class="ic2">Modernste Kommunikationstechnologien Sicherheitsprotokolle für den Datenschutz</p>
+        </div>
+        <div class="content4">
+            <i class="fas fa-envelope fa-5x icon"></i>
+            <i class="fas fa-envelope-open fa-5x icon"></i>
+            <p class="ic1">Expertise</p>
+            <p class="ic2">Spezialisierte Teams mit fundiertem Fachwissen Kontinuierliche Schulungen für Mitarbeiter</p>
+        </div>
+    </div>
+    
+    <div class="big-cont4">
+        <video autoplay muted loop id="video-background">
+            <source src="pexels-kampus-production-8201576 (2160p).mp4" type="video/mp4">
+        </video>
+        <div class="content5">
+            <p id="cont5-1">Nachhaltigkeit</p>
+            <p id="cont5-2">Engagiert dafür mit jüngeren<br>
+            Meinungen die Welt zu verändern<br>
+            für die nächste Generation!</p>
+            <p id="cont5-3">Wir praktizieren nur das beste erfolg<br>
+            zuverlässigkeit qualität & moderne technologie</p>
+        </div>
+        <div class="content6">
+            <p id="cont6-1">Wir praktizieren nur das Beste</p><br>
+            <p class="cont6-2"><i class="fas fa-recycle"></i>  Nachhaltigkeit</p>
+            <p class="cont6-2"><i class="far fa-clock"></i>  Pünktlichkeit</p>
+            <p class="cont6-2"><i class="fas fa-laptop"></i>  Moderne Technologie</p>
+            <p class="cont6-2"><i class="fas fa-star"></i>  Qualität</p>
+        </div>
+    </div>
+    <div class="big-cont5">
+        
+    </div>
+    <footer>
+        <div class="pg-footer">
+            <footer class="footer">
+              <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+                <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+              </svg>
+              <div class="footer-content">
+                <div class="footer-content-column">
+                  <div class="footer-logo">
+                    <a class="navbar-brand" href="#">
+                        <img src="WhatsApp_Image_2024-02-23_at_03.10.17__2_-removebg-preview.png" alt="Logo">
+                        <span class="text-light" style="">Mega Tel</span>
+                    </a>
+                  </div>
+                  <div class="footer-menu">
+                    <h2 class="footer-menu-name">Kundensupport 24-7</h2>
+                    <ul id="menu-get-started" class="footer-menu-list">
+                      <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                        <a href="#">Montag bis Samstag 9:00 - 21:00 Uhr</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-content-column">
+                  <div class="footer-menu">
+                    <h2 class="footer-menu-name">Dienstleistungen</h2>
+                    <ul id="menu-company" class="footer-menu-list">
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <h5 style="font-weight:bold">Telefonie</h5>
+                      </li>
+                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                        <p>Professionelle Telefonanrufannahme<br>
+                            Kundensupport rund um die Uhr<br>
+                            Inbound- und Outbound-Services</p>
+                      </li>
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <h5 style="font-weight:bold">E-Mail-Bearbeitung</h5>
+                        <p>Schnelle und präzise Bearbeitung<br>von E-Mails
+                            Individualisierte E-Mail-Antworten<br>
+                            Effizientes Management von Anfragen</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="footer-menu">
+                    <h2 class="footer-menu-name"> Legal</h2>
+                    <ul id="menu-legal" class="footer-menu-list">
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-170434">
+                        <a href="#">Privacy Notice</a>
+                      </li>
+                      <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="#">Terms of Use</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-content-column">
+                  <div class="footer-menu">
+                    <h2 class="footer-menu-name"> Büro in Bulgarien</h2>
+                    <ul id="menu-quick-links" class="footer-menu-list">
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                        <p>Knyaz Boris I, 148, Etage 1<br>
+                            Bezirk Vazrazhdane, Sofia, Bulgarien<br>
+                            ID.Nr.: 206341672<br>
+                            VAT-No.: BG206341672</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="footer-content-column">
+                  <div class="footer-call-to-action">
+                    <h2 class="footer-call-to-action-title"> Let's Chat</h2>
+                    <p class="footer-call-to-action-description"> Have a support question?</p>
+                    <a class="footer-call-to-action-button button" href="#" target="_self"> Get in Touch </a>
+                  </div>
+                  <div class="footer-call-to-action">
+                    <h2 class="footer-call-to-action-title"> You Call Us</h2>
+                    <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:+49 15215894603" target="_self"> +49 15215894603</a></p>
+                  </div>
+                </div>
+                <div class="footer-social-links">
+                  <a class="footer-social-link linkedin" href="#" target="_blank">
+                    <span class="hidden-link-text">Linkedin</span>
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a class="footer-social-link twitter" href="#"  target="_blank" >
+                    <span class="hidden-link-text">Twitter</span>
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a class="footer-social-link instagram" href="#" target="_blank">
+                    <span class="hidden-link-text">Instagram</span>
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a class="footer-social-link facebook" href="#" target="_blank">
+                    <span class="hidden-link-text">Facebook</span>
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="footer-copyright">
+                <div class="footer-copyright-wrapper">
+                  <p class="footer-copyright-text">
+                    <a class="footer-copyright-link" href="#" target="_self"> Copyright © 2024 MegaTel</a>
+                  </p>
+                </div>
+              </div>
+            </footer>
+          </div>
+    </footer>
+    <script>
+        var slideIndex = 0;
+    
+        function plusDivs(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function currentDiv(n) {
+            showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n >= slides.length) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        var slideIndex = 0;
+        plusDivs(1);
+        setInterval(function() {
+            plusDivs(1);
+        }, 3000);
+        document.addEventListener("DOMContentLoaded", function() {
+            const closedEnvelope = document.querySelector(".fa-envelope");
+            const openEnvelope = document.querySelector(".fa-envelope-open");
+
+            closedEnvelope.addEventListener("mouseenter", function() {
+                openEnvelope.style.display = "inline"; // Show the open envelope icon
+            });
+
+            closedEnvelope.addEventListener("mouseleave", function() {
+                openEnvelope.style.display = "none"; // Hide the open envelope icon
+            });
+        });
+    </script>
+    
+</body>
+</html>

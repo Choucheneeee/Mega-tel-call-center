@@ -1,0 +1,76 @@
+{% if message.author == user %}
+                          <div class="chat chat-right">
+                            <div class="chat-body">
+                              <div class="chat-bubble">
+                               
+                                <div class="chat-content">
+                                  <p>{{message.body}}</p>
+                                  <span class="chat-time">{{message.created|date:"H:i"}}</span>
+                                </div>
+                                <div class="chat-action-btns">
+                                  <ul>
+                                    
+                                    <li>
+                                      <a href="#" class="edit-msg"
+                                        ><i class="fa-solid fa-pencil"></i
+                                      ></a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="del-msg"
+                                        ><i class="fa-regular fa-trash-can"></i
+                                      ></a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {% else %}
+
+                          <div  class="chat chat-left">
+                            <div class="chat-avatar">
+                              <a href="{% url 'profile' message.author.id%}" class="avatar">
+                                <img
+                                  src="{{message.author.image.url}}"
+                                  alt="User Image"
+                                />
+                              </a>
+                            </div>
+            
+                            <div class="chat-body">
+                              <div class="chat-bubble">
+                                <div class="chat-content">
+                                  <p>{{message.body}}</p>
+                                 
+                                  <span class="chat-time">{{message.created|date:"H:i"}}</span>
+                                  <span class="chat-time">{{message.author}}</span>
+
+                                </div>
+                                <div class="chat-action-btns">
+                                  <ul>
+                                    <li>
+                                      <a
+                                        href="#"
+                                        class="share-msg"
+                                        title="Share"
+                                        ><i class="fa-solid fa-share-nodes"></i
+                                      ></a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="edit-msg"
+                                        ><i class="fa-solid fa-pencil"></i
+                                      ></a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="del-msg"
+                                        ><i class="fa-regular fa-trash-can"></i
+                                      ></a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                         {% endif %}
